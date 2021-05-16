@@ -1,0 +1,5 @@
+<?php
+$_ENV["USER_DATABASE"] = "";
+$_ENV["PASSWORD_DATABASE"] = "";
+$_ENV["NAME_DATABASE"] = "";
+$_ENV["HOST_DATABASE"] = "";

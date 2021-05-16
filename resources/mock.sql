@@ -1,0 +1,2 @@
+INSERT INTO user (id, name, cpf, email, username, password, typeUserID) VALUES ('bb44097f02f9a89fa68177b09e228be0', 'admin', '12345678909','admin@gmail.com', 'admin', '$2y$10$qMWnl6WJAxBMBsd6Yf6kYuHOFt2sIcFlFgplxYGfJhlKO3GPYh67.',1);
+INSERT INTO student (id, name, cpf, email, username, password, typeUserID) VALUES ('7f8b55f5ee1a918bfa93d77c8836bd55', 'student', '12345678902','student@gmail.com', 'admin', '$2y$10$/0baWmj.3dGpHu4YKM/vVumPS8tuNV6/M/SX1C2t73TZcXQvixZ.u.',2);
