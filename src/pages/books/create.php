@@ -1,6 +1,14 @@
 <?php
+require_once '../header/index.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/src/controllers/Book.php';
 
-require_once '../header/index.php'
+$response = null;
+
+if ($_POST) {
+    $book = new Book();
+
+    $response = $book->create($_POST);
+}
 ?>
 
 <h1 class="h2">Adicionar Livro</h1>
@@ -23,7 +31,7 @@ require_once '../header/index.php'
         <input type="file" class="form-control" id="cover" name="cover" placeholder="Selecione uma imagem com a capa do livro">
     </div>
     <div class="col-12">
-        <button type="reset" class="btn btn-primary">Cadastrar</button>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
         <button type="reset" class="btn btn-secondary">Limpar</button>
         <a class="btn btn-danger">Cancelar</a>
     </div>

@@ -9,7 +9,20 @@ class BookModel extends Model
         $this->table = "book";
     }
 
-    public function store($data)
+    public function getAll()
+    {
+        try {
+            $stmt = $this->connection->prepare("SELECT * FROM {$this->table};");
+
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (Exception $ex) {
+            Log::createLog($ex);
+        }
+    }
+
+    public function store(array $data)
     {
         try {
             $keys = array_keys($data);
