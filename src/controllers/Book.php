@@ -8,16 +8,6 @@ class Book
         $this->bookModel = new BookModel();
     }
 
-    public function create($request)
-    {
-        $data = filter_var_array($request, FILTER_SANITIZE_STRIPPED);
-
-        $data['id'] =
-            md5(uniqid(rand()));
-
-        $this->bookModel->store($data);
-    }
-
     public function getAll()
     {
         $response = [
@@ -35,5 +25,45 @@ class Book
         }
 
         return $response;
+    }
+
+    public function getById($id)
+    {
+        $reponse = [
+            'status' => 'error',
+            'message' => 'Erro ao pegar dados do livro'
+        ];
+
+        $filter = ['id' => $id];
+
+        $book = $this->bookModel->getBy($filter);
+
+        if ($book) {
+            $reponse = [
+                'status' => 'success',
+                'book' => $book[0]
+            ];
+        }
+
+        return $reponse;
+    }
+
+    public function create($request)
+    {
+        $data = filter_var_array($request, FILTER_SANITIZE_STRIPPED);
+
+        $this->bookModel->store($data);
+    }
+
+    public function update($request, $filter)
+    {
+        $data = filter_var_array($request, FILTER_SANITIZE_STRIPPED);
+
+        $this->bookModel->update($data, $filter);
+    }
+
+    public function delete($filter)
+    {
+        $this->bookModel->delete($filter);
     }
 }

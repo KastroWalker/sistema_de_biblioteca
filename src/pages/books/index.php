@@ -35,9 +35,9 @@ if ($response['status'] == 'success') :
                     <td><?= $book['author'] ?></td>
                     <td><?= $book['publisher'] ?></td>
                     <td class="">
-                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar livro">
+                        <a href="./create.php?id=<?= $book['id'] ?>" class="btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar livro">
                             <i class="fas fa-pencil-alt"></i>
-                        </button>
+                        </a>
                         <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Apagar livro">
                             <i class="fas fa-trash-alt"></i>
                         </button>
