@@ -80,7 +80,7 @@ class BookModel extends Model
                     $filterString = "{$key} = :{$key} ";
                     $bind[":$key"] = $value;
                 }
-            } else if (is_array($filter)) {
+            } else if (is_string($filter)) {
                 $filterString = $filter;
             } else {
                 throw new Exception("Filter is invalid", 1);
@@ -112,7 +112,7 @@ class BookModel extends Model
                     $filterString = "{$key} = :{$key} ";
                     $bind[":$key"] = $value;
                 }
-            } else if (is_array($filter)) {
+            } else if (is_string($filter)) {
                 $filterString = $filter;
             } else {
                 throw new Exception("Filter is invalid", 1);
