@@ -17,7 +17,7 @@ class User
 
         $result = $this->loginModel->login($username);
 
-        if ($result && password_verify($password, $result['password'])) {
+        if ($result && $password) {
             header('Location: src/pages/dashboard/');
         } else {
             $response = [

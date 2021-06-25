@@ -38,9 +38,9 @@ if ($response['status'] == 'success') :
                         <a href="./create.php?id=<?= $book['id'] ?>" class="btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar livro">
                             <i class="fas fa-pencil-alt"></i>
                         </a>
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Apagar livro">
+                        <a href="./delete.php?id=<?= $book['id'] ?>" class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Apagar livro">
                             <i class="fas fa-trash-alt"></i>
-                        </button>
+                        </a>
                     </td>
                 </tr>
             <?php
